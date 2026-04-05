@@ -16,6 +16,11 @@ namespace MauiAppTempoAgora
         {
             try
             {
+                if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
+                    {
+                        await DisplayAlert("Erro", "Sem internet", "OK");
+                    }
+               
                 if (!string.IsNullOrEmpty(txt_cidade.Text))
                 {
                     Tempo? t = await DataService.GetPrevisao(txt_cidade.Text);
