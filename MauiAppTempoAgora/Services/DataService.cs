@@ -9,10 +9,10 @@ namespace MauiAppTempoAgora.Services
         {
             Tempo? t = null;
 
-            string chave = "6135072afe7f6cec1537d5cb08a5a1a2";
+            string chave = "c110eb9b576ed41811b08ea155f2285a";
 
             string url = $"https://api.openweathermap.org/data/2.5/weather?" +
-                         $"q={cidade}&units=metric&appid={chave}";
+                         $"q={cidade}&units=metric&lang=pt_br&appid={chave}";
 
             using (HttpClient client = new HttpClient())
             {
@@ -40,9 +40,9 @@ namespace MauiAppTempoAgora.Services
                         visibility = (int)rascunho["visibility"],
                         sunrise = sunrise.ToString(),
                         sunset = sunset.ToString(),
-                    }; // Fecha obj do Tempo.
-                } // Fecha if se o status do servidor foi de sucesso
-            } // fecha laço using
+                    }; 
+                } 
+            } 
 
             return t;
         }

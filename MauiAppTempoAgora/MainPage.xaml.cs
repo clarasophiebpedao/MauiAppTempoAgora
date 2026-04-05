@@ -29,21 +29,24 @@ namespace MauiAppTempoAgora
                                          $"Nascer do Sol: {t.sunrise} \n" +
                                          $"Por do Sol: {t.sunset} \n" +
                                          $"Temp Máx: {t.temp_max} \n" +
-                                         $"Temp Min: {t.temp_min} \n";
+                                         $"Temp Min: {t.temp_min} \n" +
+                                         $"Visibilidade: {t.visibility} \n" +
+                                         $"Velocidade do Vento: {t.speed} \n" +
+                                         $"Descrição do Clima: {t.description} \n";
 
-                        lbl_res.Text = dados_previsao;
-
+                        lbl_res.Text = dados_previsao; 
+                        
                     }
                     else
                     {
 
-                        lbl_res.Text = "Sem dados de Previsão";
+                        lbl_res.Text = "Não foi possível localizar os dados...Por favor verifique o nome da cidade"; 
                     }
 
                 }
                 else
                 {
-                    lbl_res.Text = "Preencha a cidade.";
+                    lbl_res.Text = "Por favor, insira o nome da cidade";
                 }
 
             }
